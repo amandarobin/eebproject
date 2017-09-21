@@ -13,11 +13,11 @@ setwd("/Users/Amanda/Desktop/eebproject")
 1+.2+.2^2/2 #4
 1+.2+.2^2/2+.2^3/6 #5
 exp(.2) #6
-        #Section 5 Exercies
+        #Section 5 Exercises
 ??foo
 apropos("sin")
 ??sin
-        #Section 6 Exercies
+        #Section 6 Exercises
 Light <- c(20,20,20,20,21,24,44,60,90,94,101)
 rmax <- c(1.73,1.65,2.02,1.89,2.61,1.36,2.37,2.08,2.69,2.32,3.67)
 plot(rmax~Light)
@@ -30,3 +30,6 @@ fitted(fit)
 effects(fit)
 vcov(fit)
 anova(fit)
+      #Section 8 Exercises
+install.packages(c("plyr","reshape2"))
+install.packages("ggplot2",repos=NULL)
