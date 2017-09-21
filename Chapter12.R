@@ -64,3 +64,9 @@ while (TRUE) {
 }
 phi#Yes! this phi is 1.618034 therefore it worked identically to the for loop above 
 
+phi <- 12
+repeat {
+  phi.new <- 1/(1+phi)
+  if (phi==phi.new) break
+  phi <- phi.new
+}
