@@ -73,3 +73,23 @@ x <- runif(20)
 y <- mean(x)
 low <-x[x<y] 
 
+v <- c(1,1,1,1,2,2,2,2)
+X <- matrix(v,nrow=2,ncol=4,byrow=TRUE)
+X
+
+m <- matrix((rnorm(35,1,2)),5,7)
+m
+
+C <- cbind(1:3,4:6,5:7); C
+D <- rbind(1:3,4:6); D
+rbind(C,D)
+cbind(C,C)
+cbind(C,D)
+#cbind does not work with C & D because they do not have equal amounts of objects
+
+x <- seq(1,27)
+x
+dim(x) <- c(3,9)
+is.array(x)
+is.matrix(x)
+#by setting the dimension attribute on the vector x it makes it into a matrix
