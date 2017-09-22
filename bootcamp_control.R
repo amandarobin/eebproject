@@ -62,15 +62,15 @@ for(ii in 1:length(years)){
 #5)
 bankAccounts <- c(10, 9.2, 5.6, 3.7, 8.8, 0.5);
 
-Now look at the error message the following lines of code produce. Can you think of a way to modify this loop so that the loop will compund the interest?
+# Now look at the error message the following lines of code produce. Can you think of a way to modify this loop so that the loop will compund the interest?
 
 compounded <- rep(NA, 6) #this line needs to be run to initalize the variable "compounded" before the loop can start
 interestRate <- 0.0125;
 for (i in 1:length(bankAccounts)) {
   compounded[i] <- interestRate*bankAccounts[i] + bankAccounts[i]; }
 
-HINT: variables must be initialized before you can perform operations on them
-HINT 2: look at the rep() function and see if you can use that to initialize a variable that will help you.
+# HINT: variables must be initialized before you can perform operations on them
+# HINT 2: look at the rep() function and see if you can use that to initialize a variable that will help you.
 
 #6)
 bankAccounts <- c(10, 9.2, 5.6); #define bank accounts here
@@ -81,24 +81,59 @@ fun <- c(7.8, 2.1, 10.5);  #deduct
 #and incomes (through TAships) of 
 income <- c(21, 21, 21); #add this
 
+
+
 for (j in 1:5) {
   for (i in 1:length(bankAccounts)) {
-    #step 1 modify bankAccounts so that amounts reflect income and expenses
-    #step 2 get calculate interest and add to accounts from step 1
-    #you can actually use the line you have already written if you
-    #modify amounts in bankAccounts directly in step 1
+    bankAccounts[i] <- bankAccounts[i]-house[i]-food[i]-fun[i]+income[i]
+    bankAccounts[i] <- interestRate*bankAccounts[i] + bankAccounts[i]
+  } 
+  print(bankAccounts)
   }
+bankAccounts
 
-modified.bank <- bankAccounts-house-food-fun+income
-modified.bank
-for (j in 1:5) {
+#7.)
+bankAccounts <- c(10, 9.2, 5.6); #define bank accounts here
+
+house <- c(4.8, 3.8, 5.7); 
+food<- c(3.5, 4.3, 5.0); 
+fun <- c(7.8, 2.1, 10.5); 
+income <- c(21, 21, 21);
+for (j in 2015:2020) {
+  if(j%%2!=0){
+    print(j)
+    bankAccounts[1] <- bankAccounts[1]+5000
+    bankAccounts[3] <- bankAccounts[3]+5000
+  }
   for (i in 1:length(bankAccounts)) {
-    modified.bank <- bankAccounts-house-food-fun+income
-    compounded[i] <- interestRate*modified.bank[i] + modified.bank[i];
-    #step 2 get calculate interest and add to accounts from step 1
-    #you can actually use the line you have already written if you
-    #modify amounts in bankAccounts directly in step 1
-  }}
+    bankAccounts[i] <- bankAccounts[i]-house[i]-food[i]-fun[i]+income[i]
+    bankAccounts[i] <- interestRate*bankAccounts[i] + bankAccounts[i]
+      
+  } 
+  print(bankAccounts)
+}
+bankAccounts
 
 
-  compounded
+#8.) 
+ x <- 0
+ j <- 1
+while(j<18){
+   x <- x+j
+   j <- j+1
+}
+x
+
+#9.)
+ BigorSmall <- function(num){
+   if(num<=-1){
+   cat("small")}
+   else if(num>-1 & num<1){
+     cat("medium")
+   }
+   else{
+     cat("big")
+   }
+   
+ }
+
