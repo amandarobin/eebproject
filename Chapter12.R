@@ -1,3 +1,4 @@
+
       #Section 12 
 
 phi <- 1
@@ -23,6 +24,7 @@ for (t in 1:length(T)) {
   N[t] <- n
 }
 N
+plot(T,N)
 T <- 0
 N <- numeric(length(T))
 for (t in 1:length(T)) {
@@ -30,6 +32,7 @@ for (t in 1:length(T)) {
   N[t] <- n
 }
 N
+plot(T,N)
 
 phi <- 20
 k <- 1
