@@ -37,11 +37,21 @@ mean_heights_1000
 
 #6.)
 
-bins <- seq(1,1000,by=1)
-counts_100 <- hist(mean_heights_100,breaks=bins)$counts
-counts_1000 <- hist(mean_heights_1000,breaks=bins)$counts
-hist(mean_heights_1000,breaks=bins)
+bins<-seq(50,90,by=1)
+hist(mean_heights_100,breaks=bins)$breaks
+
+hist(s3,breaks=bins)$breaks
+
+counts_100<-hist(mean_heights_100,breaks=bins)$counts
+counts_1000<-hist(mean_heights_1000,breaks=bins)$counts
+
+par(mfrow=c(1,1), mar=c(4, 4, 3, 2)) #sets plotting area and margins
+barplot(rbind(counts_100,counts_1000),col= c("red","blue"),beside=TRUE,xlab="Heights",ylab="Frequency")
+legend(6,350,c("Sample Size 100","Sample Size 1000"),col=c(2,4),lwd=4)
 
 
-par(mfrow=c(1,1), mar=c(4, 4, 3, 2))
-barplot(rbind(counts_100,counts_1000),col=c(2,4),beside=T,xlab="Value",ylab="Count")
+jpeg("myplot.jpg")
+barplot(rbind(counts_100,counts_1000),col= c("red","blue"),beside=TRUE,xlab="Heights",ylab="Frequency")
+legend(6,350,c("Sample Size 100","Sample Size 1000"),col=c(2,4),lwd=4)
+dev.off()
+
