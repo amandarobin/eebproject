@@ -34,7 +34,7 @@ z[1] <- 12
 
 z[c(1,3,5)] <- c(22,33,44)
 
-r <- z[c(2,1,3)]
+r <- z[c(2,1,3)] #command to extract a vector consisting of the 2nd, 1st, and 3rd elements of z
 r
 z
 
@@ -47,10 +47,27 @@ z
 x <- c(1:10)
 x
 y <- (x-1)/(x+1)
-plot(y~x)
-g <- lm(y~x)
-abline(g)
-g
+plot(y,x)
+lines(lowess(y,x))
+
+geomSeries <- function(base, max) {
+  base^(0:floor(log(max, base)))
+}
+
+H <- 1:10
+GG <- rep(.5,10)
+GGFinal <- GG^H
+sum(GGFinal)
+H2 <- 1:50
+GG2 <- rep(.5,50)
+GGFinal2 <- GG2^H2
+sum(GGFinal2)
+
+r.5vector <- geomSeries(base=0.5, max=1/(1-0.5))
+sum(r.5vector)
+
+r.10vector <- geomSeries(base=10, max=1/(1-10))
+geomSeries(10,1/(1-10))
 
 a <- 1
 b <- 3
@@ -70,8 +87,13 @@ lowLight
 # you cannot replace lowlight with Light because Light already references a vector, so it would not properly subset the data
 
 x <- runif(20)
-y <- mean(x)
-low <-x[x<y] 
+which(x<mean(x))
+
+#two ways to find elements in the odd positions of vector
+# You can index the vector and ask for the odd number positions:
+  # vector.of.interest[1,3,5,7,9,11,etc]
+# You can index the vector asking for all postions not divisable by 2
+  # vector.of.interest[2!%%int]
 
 v <- c(1,1,1,1,2,2,2,2)
 X <- matrix(v,nrow=2,ncol=4,byrow=TRUE)
