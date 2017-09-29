@@ -76,16 +76,20 @@ par(mfrow=c(1,1))
 plot(rrSet,timevector)
 
                     #(f.)
-#WRITE THE PSUEDO CODE FOR THE HARD SHIT YOU WROTE IN PART G 
-
-      # Pseudocode for sensitivity analysis
+       # Pseudocode for sensitivity analysis
 # Define parameter values 
-
+  # create vector of growth rate value of interest (r.values)
+  # create vector of carrying capacities of interest (k.values)
+  # set max number of years (ttmax)
 # Initialize a matrix to collect all outputs
-
+  # initialize empty matrix for output: 4 by 4 (NN)
 # Use for loop to repeatedly run the model and collect output 
+  # needs to be nested so that for every value of K of interest
+  # we test it against every value of r of interest 
+  # need to save each of those values in a vector (output)
+  # then store every output value from ttmax in the initlized vector (NN)
+# Plot NN in appealing way, such as contour plot
 
-# analyze results
                   #(g)
 NN= matrix(NA, 4,4)
 r.values <- c(.5,1,1.5,2)
